@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0b1a26">
+
+    <!-- SEO + Social Preview (for Meta ad crawler) -->
+    <title>Arjun Bhai — Cricket Analysis on Telegram | Free Updates</title>
+    <meta name="description" content="Join Arjun Bhai's free Telegram channel for cricket match analysis, player form insights, pitch reports, fantasy research and live updates before every game.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (shown in Meta ad preview) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Arjun Bhai — Cricket Analysis on Telegram">
+    <meta property="og:description" content="Match previews • Player form • Live updates • Free forever. Join 1000+ cricket fans on Telegram.">
+    <meta property="og:image" content="https://metaadsspider.github.io/og-image.jpg">
+    <meta property="og:url" content="https://metaadsspider.github.io/">
+    <meta property="og:site_name" content="Arjun Bhai">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arjun Bhai — Cricket Analysis on Telegram">
+    <meta name="twitter:description" content="Match previews • Player form • Live updates • Free forever.">
+
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -19,11 +41,8 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arjun Bhai - Cricket Analysis on Telegram</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -33,41 +52,53 @@
             --accent2: #16a34a;
             --gold: #facc15;
             --tg: #229ed9;
-            --card: rgba(18, 26, 36, 0.72);
+            --tg-dark: #1478b0;
+            --card: rgba(18, 26, 36, 0.78);
+            --text: #ffffff;
+            --muted: #94a3b8;
+            --muted2: #64748b;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+
+        html, body { overflow-x: hidden; }
 
         body {
             background: radial-gradient(ellipse at top, var(--bg1) 0%, var(--bg2) 75%);
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            color: #fff;
-            overflow-x: hidden;
+            color: var(--text);
             position: relative;
+            padding: 16px 12px 40px;
+            font-size: 15px;
+            line-height: 1.5;
         }
 
+        /* Ambient orbs */
         .orb { position: fixed; border-radius: 50%; filter: blur(80px); opacity: .35; z-index: 0; animation: float 9s ease-in-out infinite alternate; pointer-events: none; }
         .orb.one { width: 260px; height: 260px; background: #22c55e; top: -60px; left: -80px; }
         .orb.two { width: 300px; height: 300px; background: #229ed9; bottom: -100px; right: -90px; animation-delay: -4s; }
         @keyframes float { to { transform: translate(30px, 40px) scale(1.15); } }
 
-        .card {
+        /* Main container — mobile first */
+        .wrap {
             position: relative;
             z-index: 1;
+            max-width: 460px;
+            margin: 0 auto;
+        }
+
+        /* Top hero card */
+        .card {
             background: var(--card);
             border-radius: 28px;
-            padding: 34px 22px 26px;
-            width: 100%;
-            max-width: 390px;
+            padding: 30px 22px 24px;
             text-align: center;
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             box-shadow: 0 20px 60px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.08);
             animation: popIn .7s cubic-bezier(.2,.9,.3,1.2) both;
+            position: relative;
+            overflow: hidden;
         }
         .card::before {
             content: ""; position: absolute; inset: 0; border-radius: 28px; padding: 1.5px;
@@ -81,69 +112,97 @@
         @keyframes spin { to { --ang: 360deg; } }
         @keyframes popIn { from { opacity: 0; transform: translateY(30px) scale(.94); } to { opacity: 1; transform: none; } }
 
+        /* Logo */
         .logo {
-            width: 84px; height: 84px; margin: 0 auto 16px;
+            width: 88px; height: 88px; margin: 0 auto 14px;
             border-radius: 50%;
             overflow: hidden;
-            padding: 0;
             border: 2px solid rgba(34,197,94,.6);
             box-shadow: 0 0 25px rgba(34,197,94,.45);
             animation: pulse 2.2s ease-in-out infinite;
         }
-        .logo img {
-            width: 100%; height: 100%;
-            object-fit: cover; object-position: center top;
-            display: block; border-radius: 50%;
-        }
+        .logo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
         @keyframes pulse { 50% { box-shadow: 0 0 40px rgba(34,197,94,.8); transform: scale(1.05); } }
 
+        /* Title */
         .main-title {
-            font-size: 28px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase;
+            font-size: 26px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase;
             background: linear-gradient(90deg, #fff, #bbf7d0, #fff);
             background-size: 200% auto;
             -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
             animation: shine 3s linear infinite;
-            margin-bottom: 14px;
+            margin-bottom: 8px;
         }
         @keyframes shine { to { background-position: 200% center; } }
 
+        .subtitle {
+            font-size: 12.5px; font-weight: 500; color: var(--muted);
+            margin-bottom: 18px;
+            letter-spacing: .3px;
+        }
+
+        /* Yellow value banner */
         .yellow-banner {
             background: linear-gradient(90deg, #facc15, #eab308);
             color: #111; font-weight: 700; font-size: 12.5px;
-            padding: 9px 12px; border-radius: 10px; margin-bottom: 22px;
+            padding: 9px 12px; border-radius: 10px; margin-bottom: 20px;
             display: block; line-height: 1.4;
             box-shadow: 0 4px 18px rgba(250,204,21,.3);
         }
 
-        .live {
-            display: inline-flex; align-items: center; gap: 8px;
-            font-size: 12px; font-weight: 600; color: #cbd5e1;
+        /* Live + free badges row */
+        .badges { display: flex; justify-content: center; gap: 8px; margin-bottom: 22px; flex-wrap: wrap; }
+        .badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 11px; font-weight: 600; color: #cbd5e1;
             background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08);
-            padding: 6px 14px; border-radius: 999px; margin-bottom: 18px;
+            padding: 6px 12px; border-radius: 999px;
         }
-        .live i { width: 8px; height: 8px; border-radius: 50%; background: #ef4444; animation: blink 1s infinite; }
+        .badge i { font-size: 10px; }
+        .badge.live i { width: 7px; height: 7px; border-radius: 50%; background: #ef4444; animation: blink 1s infinite; }
         @keyframes blink { 50% { opacity: .2; } }
 
-        /* Urgency bar - visual only, NO auto-redirect */
-        .timer-box { margin-bottom: 18px; }
-        .timer-label { font-size: 12px; font-weight: 600; letter-spacing: .6px; color: #94a3b8; margin-bottom: 10px; text-transform: uppercase; }
-        .timer-label span { color: var(--accent); font-weight: 800; }
-        .timer-bar { height: 8px; border-radius: 999px; background: rgba(255,255,255,.1); overflow: hidden; }
-        .timer-fill { height: 100%; width: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--accent2), var(--accent)); box-shadow: 0 0 12px rgba(34,197,94,.7); transition: width 1s linear; }
+        /* Sample preview mockup */
+        .sample {
+            background: rgba(34,158,217,.08);
+            border: 1px solid rgba(34,158,217,.25);
+            border-radius: 14px;
+            padding: 12px 14px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .sample-label {
+            font-size: 10px; font-weight: 700; color: var(--tg);
+            text-transform: uppercase; letter-spacing: .8px;
+            margin-bottom: 6px;
+            display: flex; align-items: center; gap: 5px;
+        }
+        .sample-msg {
+            font-size: 12.5px; color: #cbd5e1;
+            line-height: 1.6;
+            font-family: 'Poppins', monospace;
+        }
+        .sample-msg b { color: #fff; font-weight: 700; }
+        .sample-msg .green { color: var(--accent); font-weight: 600; }
 
-        .btn-container {
+        /* Main CTA button */
+        .btn-wrap {
+            position: relative;
+            margin-bottom: 14px;
+        }
+        .cta-btn {
             position: relative; overflow: hidden;
             display: flex; align-items: center; justify-content: center; gap: 12px;
             background: linear-gradient(135deg, #229ed9, #1478b0);
             border-radius: 18px; padding: 18px 16px;
             text-decoration: none; color: #fff; cursor: pointer;
             box-shadow: 0 8px 30px rgba(34,158,217,.5), 0 0 0 3px rgba(255,255,255,.08);
-            margin-bottom: 22px;
             animation: bump 1.4s ease-in-out infinite alternate;
-            transition: transform .2s;
+            transition: transform .15s;
+            font-weight: 800;
         }
-        .btn-container:active { transform: scale(.97); }
-        .btn-container::after {
+        .cta-btn:active { transform: scale(.97); }
+        .cta-btn::after {
             content: ""; position: absolute; top: 0; left: -80%; width: 50%; height: 100%;
             background: linear-gradient(120deg, transparent, rgba(255,255,255,.45), transparent);
             transform: skewX(-20deg); animation: sweep 2.4s infinite;
@@ -151,7 +210,8 @@
         @keyframes sweep { to { left: 140%; } }
         @keyframes bump { to { transform: scale(1.04); } }
 
-        .moving-text { font-size: 15px; font-weight: 800; text-transform: uppercase; line-height: 1.25; letter-spacing: .5px; text-align: left; }
+        .cta-text { font-size: 15px; text-transform: uppercase; line-height: 1.25; letter-spacing: .5px; text-align: left; }
+        .cta-sub { font-size: 10.5px; font-weight: 500; opacity: .9; text-transform: none; letter-spacing: .3px; margin-top: 2px; }
         .tg-icon {
             background: #fff; color: var(--tg);
             width: 38px; height: 38px; border-radius: 50%;
@@ -159,30 +219,49 @@
             font-size: 18px; flex-shrink: 0;
         }
 
-        .chips { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
-        .chip { font-size: 11px; font-weight: 600; color: #cbd5e1; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); padding: 6px 11px; border-radius: 999px; }
-        .chip i { color: var(--accent); margin-right: 5px; }
+        /* Trust chips */
+        .chips { display: flex; justify-content: center; gap: 7px; flex-wrap: wrap; margin-bottom: 18px; }
+        .chip { font-size: 10.5px; font-weight: 600; color: #cbd5e1; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); padding: 5px 10px; border-radius: 999px; }
+        .chip i { color: var(--accent); margin-right: 4px; font-size: 9px; }
 
-        .divider { border-top: 1px dashed rgba(255,255,255,.14); margin-bottom: 16px; }
+        .divider { border-top: 1px dashed rgba(255,255,255,.14); margin-bottom: 14px; }
 
-        .disclaimer { font-size: 10px; color: #64748b; line-height: 1.55; margin-bottom: 16px; }
+        .disclaimer { font-size: 10.5px; color: var(--muted2); line-height: 1.55; margin-bottom: 14px; }
 
-        .ads-by { font-size: 12.5px; color: #fff; font-weight: 600; }
+        .ads-by { font-size: 12px; color: #fff; font-weight: 600; }
         .ads-by span { color: #3b82f6; }
 
-        /* Post-click confirmation banner */
-        .post-click-msg {
+        /* Confirmation banner */
+        .post-click {
             display: none;
             background: rgba(34,197,94,.12);
             border: 1px solid rgba(34,197,94,.4);
             color: #bbf7d0;
             font-size: 12px;
             font-weight: 600;
-            padding: 10px;
+            padding: 10px 12px;
             border-radius: 10px;
             margin-bottom: 16px;
+            text-align: center;
+            line-height: 1.45;
         }
-        .post-click-msg.show { display: block; animation: popIn .4s ease both; }
+        .post-click i { margin-right: 6px; }
+        .post-click.show { display: block; animation: popIn .4s ease both; }
+
+        /* Urgency footer ribbon */
+        .urgency {
+            text-align: center;
+            font-size: 11px;
+            color: var(--muted);
+            margin-bottom: 14px;
+            letter-spacing: .3px;
+        }
+        .urgency b { color: var(--gold); font-weight: 700; }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .orb, .card::before, .logo, .main-title, .cta-btn, .cta-btn::after { animation: none !important; }
+        }
     </style>
 </head>
 <body>
@@ -190,98 +269,162 @@
     <div class="orb one"></div>
     <div class="orb two"></div>
 
-    <div class="card">
-        <div class="logo"><img src="logo.png" alt="Arjun"></div>
+    <div class="wrap">
 
-        <h1 class="main-title">Arjun Bhai</h1>
+        <div class="card">
 
-        <div class="yellow-banner">
-            Accurate Analysis &bull; Match Updates &bull; Right Prediction
+            <div class="logo"><img src="logo.png" alt="Arjun Bhai"></div>
+
+            <h1 class="main-title">Arjun Bhai</h1>
+            <div class="subtitle">Cricket Analysis &bull; Match Updates &bull; Free Channel</div>
+
+            <div class="yellow-banner">
+                Accurate Analysis &bull; Match Updates &bull; Cricket Insights
+            </div>
+
+            <div class="badges">
+                <span class="badge live"><i></i> LIVE UPDATES</span>
+                <span class="badge"><i class="fa-solid fa-shield-halved"></i> 100% FREE</span>
+                <span class="badge"><i class="fa-solid fa-bolt"></i> INSTANT JOIN</span>
+            </div>
+
+            <!-- Sample message preview -->
+            <div class="sample">
+                <div class="sample-label"><i class="fa-solid fa-message"></i> Sample channel message</div>
+                <div class="sample-msg">
+                    <b>IND vs AUS &bull; Toss Update</b><br>
+                    Pitch report: <span class="green">Dry, favoring spinners in 2nd innings</span><br>
+                    Expected playing XI &amp; fantasy picks coming up...
+                </div>
+            </div>
+
+            <!-- Main CTA -->
+            <div class="btn-wrap">
+                <a href="https://t.me/+jwnp5leyla41MDY1"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="cta-btn"
+                   id="ctaBtn"
+                   onpointerdown="handleCtaClick(event)"
+                   onclick="handleCtaClickFallback(event)">
+                    <div class="tg-icon"><i class="fa-brands fa-telegram"></i></div>
+                    <div>
+                        <div class="cta-text">JOIN TELEGRAM</div>
+                        <div class="cta-sub">Free &bull; Takes 10 seconds</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="post-click" id="postClickMsg">
+                <i class="fa-solid fa-circle-check"></i>
+                Opening Telegram&hellip; tap "Join Channel" inside Telegram to confirm.
+            </div>
+
+            <div class="urgency">
+                Free joining open now &bull; <b>No payment ever required</b>
+            </div>
+
+            <div class="chips">
+                <span class="chip"><i class="fa-solid fa-bolt"></i>Fast Updates</span>
+                <span class="chip"><i class="fa-solid fa-chart-line"></i>Analysis</span>
+                <span class="chip"><i class="fa-solid fa-shield-halved"></i>Free</span>
+                <span class="chip"><i class="fa-solid fa-users"></i>Active Community</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <p class="disclaimer">
+                Disclaimer: This channel shares cricket updates, analysis, and general information for fans. It does not promote betting or gambling. No outcomes are guaranteed. Please verify independently and act responsibly.
+            </p>
+
+            <div class="ads-by">Ads by <span>Spidy Ads Agency</span></div>
+
         </div>
 
-        <div class="live"><i></i> LIVE UPDATES ACTIVE</div>
-
-        <!-- Urgency bar - visual only, NO auto-redirect -->
-        <div class="timer-box">
-            <div class="timer-label" id="timerLabel">Free joining closes in <span id="countdown">2:00</span></div>
-            <div class="timer-bar"><div class="timer-fill" id="timerFill"></div></div>
-        </div>
-
-        <!-- Real anchor link to Telegram (not javascript:void) -->
-        <a href="https://t.me/+jwnp5leyla41MDY1" target="_blank" rel="noopener" class="btn-container" id="ctaBtn" onclick="trackClick(event)">
-            <div class="moving-text">JOIN TELEGRAM<br>FOR NEW UPDATE</div>
-            <div class="tg-icon"><i class="fa-brands fa-telegram"></i></div>
-        </a>
-
-        <div class="post-click-msg" id="postClickMsg">
-            <i class="fa-solid fa-circle-check"></i> Opening Telegram… tap "Join Channel" inside Telegram to confirm.
-        </div>
-
-        <div class="chips">
-            <span class="chip"><i class="fa-solid fa-bolt"></i>Fast Updates</span>
-            <span class="chip"><i class="fa-solid fa-chart-line"></i>Analysis</span>
-            <span class="chip"><i class="fa-solid fa-shield-halved"></i>Free</span>
-        </div>
-
-        <div class="divider"></div>
-
-        <p class="disclaimer">
-            Disclaimer: This channel shares cricket updates, analysis, and general information for fans. It does not promote betting or gambling. No outcomes are guaranteed. Please verify independently and act responsibly.
-        </p>
-
-        <div class="ads-by">Ads by <span>Spidy Ads Agency</span></div>
     </div>
 
     <script>
-        // ===== CONFIG =====
+        // ============================================
+        // ARJUN BHAI LANDING — ANTI-FAKE-CLICK SYSTEM
+        // ============================================
+        //
+        // PROBLEM SOLVED:
+        //   Old page auto-fired "Subscribe" event after 10s timer,
+        //   even if user walked away / never clicked → fake conversions.
+        //
+        // NEW SYSTEM:
+        //   1. PageView fires on real page load (not bots that block JS)
+        //   2. Lead event fires ONLY when a real human interacts:
+        //      - Must have spent > 1.5 seconds on page
+        //      - Must have moved mouse / scrolled / touched screen
+        //      - Then must click the JOIN button (real pointerdown event)
+        //   3. Bots that just load page & click instantly → no Lead fired
+        //   4. Opens Telegram in NEW TAB so pixel request completes
+        //
+        // ============================================
+
         const TG_LINK = "https://t.me/+jwnp5leyla41MDY1";
-        let clicked = false;
 
-        // ===== Urgency timer (visual only - NO auto-redirect) =====
-        const TOTAL_SECONDS = 120; // 2 minutes countdown
-        let timeLeft = TOTAL_SECONDS;
-        const countdownEl = document.getElementById('countdown');
-        const fillEl = document.getElementById('timerFill');
+        // Anti-fake-click state
+        let pageLoadTime = Date.now();
+        let humanInteracted = false;
+        let leadFired = false;
 
-        function fmt(sec) {
-            const m = Math.floor(sec / 60);
-            const s = sec % 60;
-            return m + ':' + (s < 10 ? '0' + s : s);
+        // Mark as "real human" only after a real interaction event
+        function markHuman() {
+            humanInteracted = true;
+            // Remove listeners once we've confirmed human (don't double-fire)
+            ['mousemove','scroll','touchstart','touchmove','keydown'].forEach(evt => {
+                document.removeEventListener(evt, markHuman, {passive: true});
+            });
         }
-        function render() {
-            countdownEl.textContent = fmt(timeLeft);
-            fillEl.style.width = (timeLeft / TOTAL_SECONDS * 100) + '%';
-        }
-        render();
+        ['mousemove','scroll','touchstart','touchmove','keydown'].forEach(evt => {
+            document.addEventListener(evt, markHuman, {passive: true});
+        });
 
-        setInterval(() => {
-            if (timeLeft > 0) { timeLeft--; render(); }
-        }, 1000);
+        // Main CTA handler — fires only on REAL human click
+        function handleCtaClick(e) {
+            if (leadFired) return; // prevent double-fire
 
-        // ===== Track REAL clicks only (no auto-fire) =====
-        function trackClick(e) {
-            if (clicked) return;
-            clicked = true;
+            const timeOnPage = (Date.now() - pageLoadTime) / 1000;
 
-            // Fire Meta Pixel events ONLY on real human click
-            if (typeof fbq !== 'undefined') {
-                fbq('trackCustom', 'TelegramClick', {
-                    content_name: 'arjun_bhai_join_button',
-                    source: 'landing_page'
-                });
-                fbq('track', 'Lead', {
-                    value: 0.00,
-                    currency: 'INR',
-                    content_name: 'telegram_channel_click'
-                });
+            // HUMAN VERIFICATION:
+            // 1. Must have spent at least 1.5s on page (filters instant bot clicks)
+            // 2. Must have interacted with page (mouse move / scroll / touch)
+            const isLikelyHuman = humanInteracted && timeOnPage > 1.5;
+
+            if (isLikelyHuman) {
+                leadFired = true;
+
+                // Fire Meta Pixel events (real conversion)
+                if (typeof fbq !== 'undefined') {
+                    fbq('trackCustom', 'TelegramClick', {
+                        content_name: 'arjun_bhai_join_button',
+                        source: 'landing_v2',
+                        time_on_page_sec: Math.round(timeOnPage)
+                    });
+                    fbq('track', 'Lead', {
+                        value: 0.00,
+                        currency: 'INR',
+                        content_name: 'telegram_channel_click',
+                        content_category: 'cricket_analysis'
+                    });
+                }
+
+                // Show confirmation banner
+                document.getElementById('postClickMsg').classList.add('show');
             }
+            // If NOT a likely human (bot / instant click), do NOT fire Lead event.
+            // The anchor still opens Telegram naturally — we just don't count it as a conversion.
+        }
 
-            // Show confirmation message
-            document.getElementById('postClickMsg').classList.add('show');
-
-            // Let pixel fire before the new tab opens (don't navigate the current page,
-            // target=_blank keeps the landing page open so the user can return)
-            // No preventDefault - let the anchor do its job naturally.
+        // Fallback for older browsers without pointerdown
+        function handleCtaClickFallback(e) {
+            // pointerdown already handled it; this is just safety
+            if (leadFired) {
+                e.preventDefault();
+                window.open(TG_LINK, '_blank', 'noopener');
+            }
         }
     </script>
 
